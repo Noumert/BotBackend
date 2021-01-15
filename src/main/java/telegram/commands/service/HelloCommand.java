@@ -1,16 +1,12 @@
 package telegram.commands.service;
-
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import telegram.commands.service.ServiceCommand;
 
-/**
- * Command "Start"
- */
-public class StartCommand extends ServiceCommand {
+public class HelloCommand extends ServiceCommand {
 
-    public StartCommand(String identifier, String description) {
+    public HelloCommand(String identifier, String description)  {
         super(identifier, description);
     }
 
@@ -21,6 +17,6 @@ public class StartCommand extends ServiceCommand {
                 String.format("%s %s", user.getLastName(), user.getFirstName());
         //обращаемся к методу суперкласса для отправки пользователю ответа
         sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
-                String.format("Let`s start! %s", userName));
+                String.format("Hello my friend! %s", userName));
     }
 }

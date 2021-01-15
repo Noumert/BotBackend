@@ -6,12 +6,11 @@ import telegram.Bot;
 import java.util.Map;
 
 public class QueueApplication {
-    private static final Map<String, String> getenv = System.getenv();
 
     public static void main(String[] args) {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new Bot(getenv.get("BOT_NAME"), getenv.get("BOT_TOKEN")));
+            botsApi.registerBot(new Bot("IraCosQueueBot","1533398537:AAHc_MCgxe5jwN6Q_lI0jyuYn2GFMv-WCfw"));
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

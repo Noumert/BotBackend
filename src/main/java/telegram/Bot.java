@@ -1,6 +1,5 @@
 package telegram;
 
-import lombok.Data;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -8,7 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import telegram.commands.service.HiCommand;
-import telegram.commands.service.StartCommand;
+import telegram.commands.service.HelloCommand;
 import telegram.nonCommand.NonCommand;
 
 //@Data
@@ -24,8 +23,8 @@ public final class Bot extends TelegramLongPollingCommandBot {
         this.BOT_TOKEN = botToken;
 
         this.nonCommand = new NonCommand();
-        register(new StartCommand("start", "Start"));
-        register(new HiCommand("Hi", "Bot say Hi"));
+        register(new HelloCommand("hello", "Bot say Hello"));
+        register(new HiCommand("hi", "Bot say Hi"));
     }
 
     @Override
